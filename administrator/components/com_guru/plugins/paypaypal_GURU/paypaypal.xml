@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.7" group="gurupayment" method="upgrade">
+	<name>Payment Processor [PayPal]</name>
+	<author>iJoomla</author>
+	<creationDate>16 March 2011</creationDate>
+    <copyright>(C) 2010 iJoomla.com</copyright>
+	<license>GNU General Public License, version 2 http://www.ijoomla.com/licensing/</license>
+	<authorEmail>webmaster2@ijoomla.com</authorEmail>
+	<authorUrl>www.iJoomla.com</authorUrl>
+	<version>1.0.4</version>
+	<description>This is a paypal plugin for Guru. For more information visit guru.ijoomla.com</description>
+	<files>
+		<filename plugin="paypaypal">paypaypal.php</filename>
+		<filename>paypal1.gif</filename>
+		<filename>paypal2.gif</filename>
+		<filename>papaypal_log.txt</filename>
+		<filename>fields/ppcheck.php</filename>
+	</files>
+	<config>
+		<fields name="params" addfieldpath="/plugins/gurupayment/fields">
+			<fieldset name="advanced">				
+				<field name="paypaypal_label" size="50" type="text" default="PayPal Payment" label="Label" description="Label to use in Frontend Payment processor list" />
+				<field name="paypaypal_image" type="imagelist" directory="/plugins/gurupayment" hide_default="1" default="paypal1.gif" label="Image" description="PARAMIMAGE" />
+				<field name="paypaypal_email" type="text" default="" label="PayPal Account (E-mail)" />
+				<field name="paypaypal_lc" type="text" default="EN" label="Language" description="see languages codes https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&amp;content_ID=developer/e_howto_html_countrycodes" />
+				
+				<field name="paypaypal_currency" type="list" default="USD" label="Transaction currency" description="">
+					<option value="USD">U.S. Dollars (USD)</option>
+					<option value="EUR">Euros (EUR)</option>
+					<option value="GBP">Pounds Sterling (GBP)</option>
+					<option value="CAD">Canadian Dollars (CAD)</option>
+					<option value="JPY">Yen (JPY)</option>
+					<option value="AUD">Australian Dollars (AUD)</option>
+					<option value="NZD">New Zealand Dollars (NZD)</option>
+					<option value="CHF">Swiss Francs (CHF)</option>
+					<option value="HKD">Hong Kong Dollars (HKD)</option>
+					<option value="SGD">Singapore Dollars (SGD)</option>
+					<option value="SEK">Swedish Kronor (SEK)</option>
+					<option value="DKK">Danish Kroner (DKK)</option>
+					<option value="PLZ">Polish Zloty (PLZ)</option>
+					<option value="NOK">Norwegian Kroner (NOK)</option>
+					<option value="HUF">Hungarian Forint (HUF)</option>
+					<option value="CZK">Czech Koruna (CZK)</option>
+					<option value="BRL">Brazilian Real (BRL)</option>
+					<option value="MXN">Peso Mexicano (MXN)</option>
+					<option value="INR">Indian rupee (INR)</option>
+					<option value="ZAR">South African Rand (ZAR)</option>
+					<option value="IDR">Indonesian Rupiah (IDR)</option>
+					<option value="MYR">Malaysian Ringgit (MYR)</option>
+					<option value="XOF">African CFA Franc (XOF)</option>
+					<option value="BGN">Bulgarian lev (BGN)</option>
+					<option value="VND">Vietnamese Dong (VND)</option>
+					<option value="CNY">Chinese Yuan (CNY)</option>
+					<option value="IR">Iranian Rial (IR)</option>
+				</field>				
+				<field name="paypaypal_tax" type="text" default="0.00" label="Tax (E.g. 0.55)" />
+				<field name="paypaypal_ship" class="btn-group" type="radio" label="Shipping Address" description="" default="1" value='1'>
+					<option value="2">Yes</option>
+					<option value="1">No</option>
+				</field>
+				<field name="paypaypal_errorlog" class="btn-group" type="radio" default="0" label="Enable Errorlog (for debug)" description="Keep errorlog for debuging" value='0'>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="paypaypal_sandbox" class="btn-group" type="radio" default="0" label="Test through Sandbox" description="Only for developers who know what they are doing">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="paypaypal_print_ipn" class="btn-group" type="radio" default="0" label="Print IPN url" description="Prints IPN url to check if it is accepted. &lt;b&gt;DO NOT USE&lt;/b&gt; for customers. ONLY for developers">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+		<fields name="params" addfieldpath="/plugins/gurupayment/fields">
+			<fieldset name="basic">		
+				<field name="paypaypal_cheker" type="ppcheck" default="" label="Check Requirements" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

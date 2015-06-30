@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension version="2.5" type="plugin" group="system">
+	<name>System - Filter JavaScript Frameworks</name>
+	<author>Alonzo Turner</author>
+	<authorEmail>alonzo.turner@subtextproductions.com</authorEmail>
+	<authorURL>http://www.subtextproductions.com</authorURL>
+	<creationDate>2012-05-02</creationDate>
+	<copyright><![CDATA[&copy; 2007-2012 Subtext Productions.]]></copyright>
+	<license>GNU/GPL v3</license>
+	<version>1.0</version>
+	<description>This plugin will filter and sort script tags loaded into the document head preventing JavaScript frameworks from loading multiple copies or conflicting frameworks.</description>
+	<files>
+		<filename plugin="filterjavascript">filterjavascript.php</filename>
+	</files>
+	<languages>
+		<language tag="en-US">en-US.plg_system_filterjavascript.ini</language>
+		<language tag="en-US">en-US.plg_system_filterjavascript.sys.ini</language>
+		<language tag="en-GB">en-GB.plg_system_filterjavascript.ini</language>
+		<language tag="en-GB">en-GB.plg_system_filterjavascript.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="framework" type="list" label="PLG_SYSTEM_FILTERJAVASCRIPT_FRAMEWORK_LABEL" description="PLG_SYSTEM_FILTERJAVASCRIPT_FRAMEWORK_DESC">
+					<option value="prototype">Prototype</option>
+					<option value="mootools">Moo Tools</option>
+					<option value="jquery">jQuery</option>
+				</field>
+				<field name="system" type="radio" default="0" label="PLG_SYSTEM_FILTERJAVASCRIPT_SYSTEM_LABEL" description="PLG_SYSTEM_FILTERJAVASCRIPT_SYSTEM_DESC">
+					<option value="0">PLG_SYSTEM_FILTERJAVASCRIPT_BOOLEAN_FALSE</option>
+					<option value="1">PLG_SYSTEM_FILTERJAVASCRIPT_BOOLEAN_TRUE</option>
+				</field>
+				<field name="version" type="text" size="20" label="PLG_SYSTEM_FILTERJAVASCRIPT_VERSION_LABEL" description="PLG_SYSTEM_FILTERJAVASCRIPT_VERSION_DESC"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,144 @@
+<?php
+
+/*------------------------------------------------------------------------
+# com_guru
+# ------------------------------------------------------------------------
+# author    iJoomla
+# copyright Copyright (C) 2013 ijoomla.com. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://www.ijoomla.com
+# Technical Support:  Forum - http://www.ijoomla.com/forum/index/
+-------------------------------------------------------------------------*/
+
+define( '_JEXEC', 1 );
+define('JPATH_BASE', substr(substr(dirname(__FILE__), 0, strpos(dirname(__FILE__), "administra")),0,-1));
+
+
+define( 'DS', DIRECTORY_SEPARATOR );
+$parts = explode(DS, JPATH_BASE);
+require_once ( JPATH_BASE .DS.'includes'.DS.'defines.php' );
+require_once ( JPATH_BASE .DS.'includes'.DS.'framework.php' );
+//require_once ( JPATH_BASE .DS.'libraries'.DS.'joomla'.DS.'methods.php');
+require_once ( JPATH_BASE .DS.'configuration.php' );
+//require_once ( JPATH_BASE .DS.'libraries'.DS.'joomla'.DS.'base'.DS.'object.php');
+require_once ( JPATH_BASE .DS.'libraries'.DS.'joomla'.DS.'database'.DS.'database.php');
+//require_once ( JPATH_BASE .DS.'libraries'.DS.'joomla'.DS.'database'.DS.'database'.DS.'mysql.php');
+//require_once ( JPATH_BASE .DS.'libraries'.DS.'joomla'.DS.'filesystem'.DS.'folder.php');
+
+$config = new JConfig();
+
+$options = array ("host" => $config->host, "user" => $config->user, "password" => $config->password, "database" => $config->db,"prefix" => $config->dbprefix);
+
+$database =  JFactory::getDBO();
+$saveString = $_SERVER['QUERY_STRING'];
+$saveString = str_replace("saveString=", "", $saveString);
+// we get one day_id to find the program_id
+
+$temp_items = array();
+for($i=1; $i<=100; $i++){
+	$result = JRequest::getVar("saveString".$i, "null");
+	if($result == "null"){
+		break;
+	}
+	else{
+		$temp_items[] = $result;
+	}
+}
+$temp_items = implode(",", $temp_items);
+
+$items = explode(",", $temp_items);
+
+$day_id_array = explode(':',$items[0]);
+$day_id = $day_id_array[2];
+
+/* the response looks like this: the_node_id-the_parent_node_id:type:real_id
+the_node_id - not used, not necessary
+the_parent_node_id - not used, not necessary (is 0 for ROOT and for a LEAF/SCREEN points to BRANCH/GROUP)
+type: false if it's a GROUP
+type: true if it's a SCREEN
+real_id: the GROUP id or the SCREEN id
+6-0:false:202:,1-0:false:73:,2-1:true:11:,3-1:true:13:,4-0:false:72:,5-4:true:13:,7-0:false:203: */
+
+$sql = " SELECT id, days, tasks FROM #__guru_programstatus WHERE pid = (SELECT pid FROM #__guru_days WHERE id = '".$day_id."') ";
+$database->setQuery($sql);
+if (!$database->query()) {
+	echo $database->stderr();
+	return;
+}
+$ids = $database->loadObject();
+$the_old_day_order = $ids->days;
+$the_old_day_order = explode(';', $the_old_day_order);
+$the_old_task_order = $ids->tasks;
+$the_old_task_order = explode(';', $the_old_task_order);
+
+$new_daystatus_order = '';
+$new_taskstatus_order = '';
+
+foreach($items as $one_item)
+	{
+		//one_item looks like this ->  6-0:false:202:
+		$one_item_array = explode(':', $one_item);
+		if($one_item_array[1]=='false')
+			{
+				// saving the new order
+				$day_id = $one_item_array[2];
+
+				$sql = " SELECT ordering FROM #__guru_days WHERE id = ".$day_id;
+				$database->setQuery($sql);		
+				$database->query();
+				$tmp_ordering = $database->loadResult();		
+				
+				$old_day_status_array = $the_old_day_order[$tmp_ordering-1];
+				$old_day_status_array_expl = explode (',',$old_day_status_array);
+				
+				$new_daystatus_order = $new_daystatus_order.$day_id.','.$old_day_status_array_expl[1].';';
+						
+				if(strlen($the_old_task_order[$tmp_ordering-1])>0)		
+					$new_taskstatus_order = $new_taskstatus_order.$the_old_task_order[$tmp_ordering-1].';';
+				else
+					{
+						$new_taskstatus_order = $new_taskstatus_order.';';	
+					}	
+			}	
+	}
+
+$sql = "UPDATE #__guru_programstatus 
+						SET days='".$new_daystatus_order."',
+							tasks='".$new_taskstatus_order."'
+						where id='".$ids->id."'";
+				$database->setQuery($sql);
+				$database->query();	
+
+$i = 1;
+foreach($items as $one_item)
+	{
+		//one_item looks like this ->  6-0:false:202:
+		$one_item_array = explode(':', $one_item);
+		if($one_item_array[1]=='false')
+			{
+				// saving the new order
+				$day_id = $one_item_array[2];
+			
+				$sql = "UPDATE #__guru_days 
+						SET ordering='".$i."'
+						where id='".$day_id."'";
+				$database->setQuery($sql);
+				$database->query();		
+				
+				// deleting the old day-task relation
+				$sql = "DELETE FROM #__guru_mediarel 
+						WHERE type='dtask' AND type_id='".$day_id."'";
+				$database->setQuery($sql);	
+				$database->query();			
+				
+				$i++;
+			}	
+		else
+			{	
+				$task_id = $one_item_array[2];
+				$sql = "INSERT INTO `#__guru_mediarel` (`type`,`type_id`,`media_id`) VALUES ('dtask','".$day_id."','".$task_id."')";
+				$database->setQuery($sql);
+				$database->query();
+			}
+	}
+?>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="system" method="upgrade">
+	<name>System - RSMembership! - 2Checkout</name>
+	<author>RSJoomla!</author>
+	<creationDate>March 2014</creationDate>
+	<copyright>(C) 2009-2014 www.rsjoomla.com</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license> 
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_SYSTEM_RSMEMBERSHIP2CO_PLUGIN_DESC</description>
+	<files>
+		<filename plugin="rsmembership2co">rsmembership2co.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_rsmembership2co.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_rsmembership2co.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field type="text" name="id" default="123456" value="" size="55" label="PLG_SYSTEM_RSMEMBERSHIP2CO_ID" description="PLG_SYSTEM_RSMEMBERSHIP2CO_ID_DESC"/>
+				<field type="password" name="secret_word" default="password" value="" size="55" label="PLG_SYSTEM_RSMEMBERSHIP2CO_SECRET_WORD" description="PLG_SYSTEM_RSMEMBERSHIP2CO_SECRET_WORD_DESC"/>
+				<field name="mode" type="radio" class="btn-group" default="0" label="PLG_SYSTEM_RSMEMBERSHIP2CO_MODE" description="PLG_SYSTEM_RSMEMBERSHIP2CO_MODE_DESC">
+					<option value="0">PLG_SYSTEM_RSMEMBERSHIP2CO_MODE_TEST</option>
+					<option value="1">PLG_SYSTEM_RSMEMBERSHIP2CO_MODE_LIVE</option>
+				</field>
+				<field name="tax_type" type="radio" class="btn-group" default="0" label="PLG_SYSTEM_RSMEMBERSHIP2CO_TAX_TYPE" description="PLG_SYSTEM_RSMEMBERSHIP2CO_TAX_TYPE_DESC">
+					<option value="0">PLG_SYSTEM_RSMEMBERSHIP2CO_TAX_PERCENT</option>
+					<option value="1">PLG_SYSTEM_RSMEMBERSHIP2CO_TAX_FIXED</option>
+				</field>
+				<field type="text" name="tax_value" default="0" value="" cols="55" rows="10" label="PLG_SYSTEM_RSMEMBERSHIP2CO_TAX_VALUE" description="PLG_SYSTEM_RSMEMBERSHIP2CO_TAX_VALUE_DESC"/>
+				<field name="message_type" type="radio" class="btn-group" default="0" label="PLG_SYSTEM_RSMEMBERSHIP2CO_MESSAGE_TYPE" description="PLG_SYSTEM_RSMEMBERSHIP2CO_MESSAGE_TYPE_DESC">
+					<option value="0">PLG_SYSTEM_RSMEMBERSHIP2CO_MESSAGE_TYPE_PURCHASE</option>
+					<option value="1">PLG_SYSTEM_RSMEMBERSHIP2CO_MESSAGE_TYPE_MEMBERSHIP</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field type="text" name="payment_name" default="2Checkout" class="input-xlarge" size="20" label="PLG_SYSTEM_RSMEMBERSHIP2CO_PAYMENT_NAME" description="PLG_SYSTEM_RSMEMBERSHIP2CO_PAYMENT_NAME_DESC"/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

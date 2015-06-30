@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+        <layout title="User CPD Credits Page">
+                <message>Page Displaying a Users Total accumulated CPD Credits and a table displaying completed activities and their credit values, filterable by start and end date</message>
+        </layout>
+</metadata>

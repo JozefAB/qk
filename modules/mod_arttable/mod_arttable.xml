@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" position="status" method="upgrade">
+	<name>Art Table Lite Edition</name>
+	<author>artetics.com</author>
+	<creationDate>November 2010</creationDate>
+	<copyright>Copyright (C) 2010 artetics.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@artetics.com</authorEmail>
+	<authorUrl>www.artetics.com</authorUrl>
+	<version>1.5.1</version>
+	<description><![CDATA[Art Table Lite Edition module is free and limited edition of <a href="http://www.artetics.com/ARTools/art-table" title="Art Table - Easy Tables and Charts for Joomla!">Art Table</a>.<br /><br />&copy;&nbsp;<a href="http://www.artetics.com">Artetics.com</a> - Start Point For Your Website.]]></description>
+	<files>
+		<filename module="mod_arttable">mod_arttable.php</filename>
+		<folder module="mod_arttable">tables</folder>
+		<folder module="mod_arttable">library</folder>
+		<filename module="mod_arttable">js/jquery.js</filename>
+		<filename module="mod_arttable">js/jquery.nc.js</filename>
+		<filename module="mod_arttable">css/style.css</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="loadJQuery" type="list" default="1" label="Load jQuery library" description="Load jQuery javascript library? Choose no if it is always included in your pages">
+		  <option value="1">yes</option>
+		  <option value="0">no</option>
+		</param>
+		<param name="title" type="text" default="" label="Title" description="Title"/>
+		<param name="className" type="text" default="arttable_table" label="CSS class name" description="CSS class name for table"/>
+		<param name="sqlQuery" type="textarea" default="" rows="20" cols="30" label="SQL Query" description="SQL Query" />
+    <param name="connectionString" type="text" default="" label="Connection string" description="Connection string for database if using database another than Joomla! default. Example: mysqli,localhost,db_name,root,pass" />
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="fieldMODULECLASSSUFFIX" />
+				<field name="loadJQuery" type="list" default="1" label="Load jQuery library" description="Load jQuery javascript library? Choose no if it is always included in your pages">
+				  <option value="1">yes</option>
+				  <option value="0">no</option>
+				</field>
+				<field name="title" type="text" default="" label="Title" description="Title"/>
+				<field name="className" type="text" default="arttable_table" label="CSS class name" description="CSS class name for table"/>
+				<field name="sqlQuery" type="textarea" default="" rows="20" cols="30" label="SQL Query" description="SQL Query" filter="raw"/>
+        <field name="connectionString" type="text" default="" label="Connection string" description="Connection string for database if using database another than Joomla! default. Example: mysqli,localhost,db_name,root,pass" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

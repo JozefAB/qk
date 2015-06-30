@@ -1,0 +1,1 @@
+a:2:{s:3:"url";s:63:"http://guru.ijoomla.com/ijoomla_rss/rss/xml/guru/videos/RSS2.0/";s:8:"feed_url";s:69:"http://guru.ijoomla.com/component/obrss/change-log-joomla-2-5?Itemid=";}

@@ -1,0 +1,75 @@
+div#myModal{
+	border-radius: 6px 0 6px 6px !important;
+    left: 100px;
+    margin-left: 0;
+    position: fixed;
+    right: 100px;
+    width: auto;
+}
+div.modal-header{
+	border-bottom: none;
+	padding: 0;
+}
+div#myModal .modal-body{
+	margin: 0;
+}
+/*div#myModal iframe{
+	width: 100%;
+	min-height: 380px;
+}*/
+div.modal-header .close{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 0 5px 5px 0;
+    margin-top: 2px;
+    opacity: 100;
+    padding: 4px 8px 5px 12px;
+    position: absolute;
+    right: -27px;
+    top: -2px;
+    z-index: 100000;
+}
+div#myModal iframe html{
+	margin-right: 12px;
+}
+div#myModal table.adminform{
+	width: 100%;
+}
+.adminform .g_admin_media{
+	background: #FF9D00;
+	width: 100% !important;
+	height: 100px;
+	box-shadow: 0 0 1px solid rgba(0,0,0,0.4);
+	border-radius: 6px;
+	visibility: visible;
+}
+/* child modal */
+div#myModal1.modal1{
+	border-radius: 6px 0 6px 6px;
+    box-shadow: 0 0 3px 1px #000000;
+    left: 10px !important;
+    position: fixed;
+    right: 40px !important;
+    top: 1% !important;
+    width: auto !important;
+}
+div#myModal1.modal1 #modal1-body{
+	padding: 15px;
+	border-radius: 6px;
+}
+div.g_top_filters{
+	margin-left: 0;
+}
+div.g_top_filters .span4{
+	width: 33%;
+	margin-left: 0 !important;
+}
+div.g_top_filters .g_row{
+	margin-bottom: 10px;
+}
+/*=====================================================
+	option spesific
+=======================================================*/
+/*-- cource --*/
+div.chzn-container ul.chzn-results{
+	max-height: 120px;
+}
