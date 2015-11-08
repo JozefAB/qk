@@ -50,25 +50,25 @@ h2.rsm_title small {
 #rsm_username_message
 {
 	padding: 4px;
-	/*margin-top: 7px;*/
+	margin-top: 7px;
 	float: left;
-	width: 50%;
+	/*width: 50%;*/
 }
 
 #rsm_password_message
 {
 	padding: 4px;
-	/*margin-top: 7px;*/
+	margin-top: 7px;
 	float: left;
-	width: 50%;
+	/*width: 50%;*/
 }
 
 #rsm_email_message
 {
 	padding: 4px;
-	/*margin-top: 7px;*/
+	margin-top: 7px;
 	float: left;
-	width: 50%;
+	/*width: 50%;*/
 }
 
 .rsm_error
@@ -257,3 +257,118 @@ h2.rsm_title small {
 .rsm-margin-chradio {
 	margin-right:5px !important;
 }
+
+/*CUSTOM STYLES*/
+/*MESSAGE SPEACH BUBBLE*/
+.triangle-border {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  border:5px solid #fff700;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+.triangle-border.red {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  border:5px solid #eb7e7f;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-border.left {
+  /*margin-left:30px;*/
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-border.right {
+  margin-right:30px;
+}
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border:before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#fff700 transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+.triangle-border.red:before {
+  content:"";
+  position:absolute;
+  bottom:-20px; /* value = - border-top-width - border-bottom-width */
+  left:40px; /* controls horizontal position */
+  border-width:20px 20px 0;
+  border-style:solid;
+  border-color:#eb7e7f transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+  content:"";
+  position:absolute;
+  bottom:-13px; /* value = - border-top-width - border-bottom-width */
+  left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+  border-width:13px 13px 0;
+  border-style:solid;
+  border-color:#fff transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.left:before {
+  top:0px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:15px 30px 15px 0;
+  border-color:transparent #fff700;
+}
+
+.triangle-border.red.left:before {
+  top:0px; /* controls vertical position */
+  bottom:auto;
+  left:-30px; /* value = - border-left-width - border-right-width */
+  border-width:15px 30px 15px 0;
+  border-color:transparent #eb7e7f;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+  top:6px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:-21px; /* value = - border-left-width - border-right-width */
+  border-width:9px 21px 9px 0;
+  border-color:transparent #fff;
+}
+/*END*/

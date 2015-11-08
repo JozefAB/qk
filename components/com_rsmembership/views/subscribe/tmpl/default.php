@@ -207,12 +207,12 @@ function rsm_check_username(what)
 			if (is_available)
 			{
 				suggestions.style.display = 'none';
-				message.className = 'rsm_ok';
+				message.className = 'rsm_ok triangle-border left';
 				message.innerHTML = "<?php echo $this->escape(JText::_('COM_RSMEMBERSHIP_USERNAME_IS_OK', true)); ?>";
 			}
 			else
 			{			
-				message.className = 'rsm_error';
+				message.className = 'rsm_error triangle-border red left';
 				message.innerHTML = "<?php echo $this->escape(JText::_('COM_RSMEMBERSHIP_USERNAME_NOT_OK', true)); ?>";
 			}
 		}
@@ -226,12 +226,12 @@ function qikeyValidateEmail(email) {
 		{
 			var email = document.getElementById('rsm_email_message');
 			email.style.display = '';
-			email.className = 'rsm_error';
+			email.className = 'rsm_error triangle-border red left';
 			email.innerHTML = 'Please enter a valid email address';
 		} else {
 			var email = document.getElementById('rsm_email_message');
 			email.style.display = '';
-			email.className = 'rsm_ok';
+			email.className = 'rsm_ok triangle-border left';
 			email.innerHTML = "Perfect!";
 		}
 }
@@ -243,12 +243,12 @@ function qikeyComparePasswords(pass2) {
 		{
 			var testElementSelector = document.getElementById('rsm_password_message');
 			testElementSelector.style.display = '';
-			testElementSelector.className = 'rsm_error';
+			testElementSelector.className = 'rsm_error triangle-border red left';
 			testElementSelector.innerHTML = "Passwords don't match yet!";
 		} else {
 			var testElementSelector = document.getElementById('rsm_password_message');
-			testElementSelector.style.display = 'none';
-			testElementSelector.className = 'rsm_ok';
+			testElementSelector.style.display = '';
+			testElementSelector.className = 'rsm_ok triangle-border left';
 			testElementSelector.innerHTML = "Passwords Match";
 		}
 }
