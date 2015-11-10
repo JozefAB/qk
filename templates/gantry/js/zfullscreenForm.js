@@ -159,7 +159,7 @@
 	 */
 	FForm.prototype._addErrorMsg = function() {
 		// error message
-		this.msgError = createElement( 'span', { cName : 'fs-message-error', appendTo : this.el } );
+		this.msgError = createElement( 'div', { cName : 'rsm_error triangle-border red left qkhidden', appendTo : this.el } );
 	}
 
 	/**
@@ -329,6 +329,13 @@
 		else {
 			onEndAnimationFn();
 		}
+
+		/*QIKEY CUSTOMISATION*/
+			// var message = document.getElementById('qk_subscribe_field_msg');
+			// 	message.style.display = '';
+			// 	message.innerHTML = "TEST";
+		/*END*/
+
 	}
 
 	/**
@@ -455,7 +462,7 @@
 		var message = '';
 		switch( err ) {
 			case 'NOVAL' : 
-				/*message = 'Please fill the field before continuing';*/
+				// message = 'Please fill the field before continuing';
 				message = '';
 				break;
 			case 'INVALIDEMAIL' : 
@@ -464,8 +471,8 @@
 				break;
 			// ...
 		};
-		this.msgError.innerHTML = message;
-		this._showCtrl( this.msgError );
+		// this.msgError.innerHTML = message;
+		// this._showCtrl( this.msgError );
 	}
 
 	// clears/hides the current error message

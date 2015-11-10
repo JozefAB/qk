@@ -139,7 +139,7 @@ function rsm_check_username(what)
 	if (!validate_username(username))
 	{
 		message.style.display = '';
-		message.className = 'rsm_error';
+		message.className = 'rsm_error_special triangle-border red left';
 		message.innerHTML = "<?php echo $this->escape(JText::_('COM_RSMEMBERSHIP_PLEASE_TYPE_USERNAME', true)); ?>";
 		return false;
 	}
@@ -294,8 +294,8 @@ function rsm_random()
 
 <?php if (!$this->logged) { ?>
 <!--<h1><?php //echo JText::_('COM_RSMEMBERSHIP_NEW_CUSTOMER'); ?></h1>-->
-<h2 style="border:none;">Excellent decision!</h2><br />
-To get you started, we first need a little information from you. Only the most basic information is required. You can choose to provide some extra information if you'd like. This information will help us understand your interests so we can improve your experience.<br /><br />
+<h2 id="qk_subscribe_heading" style="border:none; color:#fff700;">Excellent decision!</h2><br />
+<div id="qk_subscribe_field_msg" style="color:#fff;">To get you started, we first need a little information from you. Only the most basic information is required. You can choose to provide some extra information if you'd like. This information will help us understand your interests so we can improve your experience.<br /><br /></div>
 <?php } ?>
 <?php if (!$this->logged && $this->show_login) { ?>
 	<p><?php echo JText::_('COM_RSMEMBERSHIP_SUBSCRIBE_PLEASE_ELSE'); ?></p>

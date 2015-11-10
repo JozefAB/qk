@@ -3,7 +3,11 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
 	/*color: #fff;*/
+	background-color: rgba(101, 95, 99, 0.8);
 }
 
 .overview .fs-form-wrap {
@@ -49,7 +53,7 @@
 }
 
 .fs-form-overview {
-	padding: 2.5em 30% 6em;
+	padding: 20px 0 0 20px;
 	width: 100%;
 	height: 100%;
 	/*background: #fffed8;*/
@@ -59,7 +63,7 @@
 
 .fs-form-overview .fs-fields::before {
 	display: block;
-	margin-bottom: 2.5em;
+	/*margin-bottom: 2.5em;*/
 	color: #3b3f45;
 	content: 'Review & Submit';
 	font-weight: 700;
@@ -118,6 +122,7 @@ button.fs-continue,
 .fs-form-wrap button {
 	border: none;
 	/*background: none;*/
+	float: none;
 }
 
 .fs-form-wrap button[disabled] {
@@ -261,7 +266,7 @@ button.fs-continue,
 
 .fs-form-overview .fs-fields input {
 	border-bottom-color: transparent;
-	color: rgba(0,0,0,0.5);
+	/*color: rgba(0,0,0,0.5);*/
 }
 
 .fs-fields [required] {
@@ -273,12 +278,11 @@ button.fs-continue,
 
 .fs-fields input:focus {
 	background-color: #3b3f45; /* Fixes chrome bug with placeholder */
-	border-color: #fff !important;
 }
 
 .fs-form-overview .fs-fields input:focus {
-	background-color: #fffed8; /* Fixes chrome bug with placeholder */
-	border-color: #fff !important;
+	background-color: #3b3f45; /* Fixes chrome bug with placeholder */
+	/*border-color: #fff !important;*/
 }
 
 .fs-form-overview .fs-fields input {
@@ -296,28 +300,52 @@ button.fs-continue,
 	cursor: pointer;
 }
 
-.fs-fields .fs-radio-custom input[type="radio"] .fa-cc-paypal {
+.fs-fields .fs-radio-custom input[type="radio"] + label .fa-cc-paypal {
 	/*position: absolute;*/
 	display: display;
-	margin: 30px auto 20px;
-	margin: 0 auto 20px;
+	margin: 0px 20px 0px 20px;
 	/*width: 100%;
 	height: 100%;*/
 	/*opacity: 0;*/
 	cursor: pointer;
-	color: black;
+	color: #fff;
+	font-size: 40px;
 }
 
 .fs-fields .fs-radio-custom input[type="radio"]:checked + label .fa-cc-paypal {
 	/*position: absolute;*/
 	display: display;
-	margin: 30px auto 20px;
-	margin: 0 auto 20px;
+	margin: 0px 20px 0px 20px;
 	/*width: 100%;
 	height: 100%;*/
 	/*opacity: 0;*/
 	cursor: pointer;
-	color: #7a0101;
+	color: #fff700;
+	font-size: 40px;
+}
+
+.fs-fields .fs-radio-custom input[type="radio"] + label .fa-credit-card {
+	/*position: absolute;*/
+	display: display;
+	margin: 0px 20px 0px 20px;
+	/*width: 100%;
+	height: 100%;*/
+	/*opacity: 0;*/
+	cursor: pointer;
+	color: #fff;
+	font-size: 40px;
+}
+
+.fs-fields .fs-radio-custom input[type="radio"]:checked + label .fa-credit-card {
+	/*position: absolute;*/
+	display: display;
+	margin: 0px 20px 0px 20px;
+	/*width: 100%;
+	height: 100%;*/
+	/*opacity: 0;*/
+	cursor: pointer;
+	color: #fff700;
+	font-size: 40px;
 }
 
 .fs-fields > li .fs-radio-custom span {
@@ -487,7 +515,7 @@ button.fs-continue,
 
 /*QIKEY FS-CONTROLS*/
 .fs-controls {
-	position: absolute;
+	/*position: absolute;*/
 	width: 100%;
 }
 
@@ -495,7 +523,7 @@ button.fs-continue,
 .fs-nav-dots {
 	position: absolute;
 	width: 84%;
-	margin: 8px 8% 0 8%;
+	margin: 15px 8% 0 8%;
 	/*top: 50%;
 	right: 60px;
 	left: auto;*/
@@ -545,7 +573,7 @@ button.fs-continue,
 
 .fs-nav-dots button:hover::before,
 .fs-nav-dots button.fs-dot-current::before {
-	background: #F5C52C;
+	background: #fff700;
 }
 
 /* Progress bar */
@@ -685,7 +713,7 @@ button.fs-continue {
 	position: relative;
 	right: 0;
 	bottom: 0;
-	margin: 30px 40px 60px 90px;
+	margin: 35px 40px 60px 90px;
 	font-size: 1.25em;
 }
 
@@ -922,3 +950,25 @@ input[type=text]::-ms-clear {
 		transform: translate3d(0,0,0);
 	}
 }
+
+/*CUSTOM QK STYLES*/
+.rsm_error_special {
+	width: 450px;
+	color: #eb7e7f !important;
+	font-size: 0.4em;
+	font-weight: 700;
+}
+
+.fs-fields input:focus:required:invalid:focus, textarea:focus:required:invalid:focus, select:focus:required:invalid:focus {
+	-webkit-box-shadow:none;
+}
+
+.qkhidden {
+	visibility: hidden;
+}
+
+div.rt-grid-12 div.rt-block  {
+	margin-top: 150px;
+}
+
+/*END*/
