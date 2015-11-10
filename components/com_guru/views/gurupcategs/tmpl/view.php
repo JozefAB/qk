@@ -911,7 +911,7 @@ function generateCoursesCellsB($config_courses, $style_courses, $course, $config
 					$i = 0;
 					$category_layout .= '<div class="cat_list_wrap g_sect clearfix">';
 					if(count($courses_array) > 0){
-						$category_layout .= '<div class="'.$config_category_style->ctg_name.' section_title"><h4>'.JText::_("GURU_COURSES_IN_CATEGORY").':</h4></div> ';
+						// $category_layout .= '<div class="'.$config_category_style->ctg_name.' section_title"><h4>'.JText::_("GURU_COURSES_IN_CATEGORY").':</h4></div> ';
 					}
 					
 					$category_layout .= '<div class="g_row">';
