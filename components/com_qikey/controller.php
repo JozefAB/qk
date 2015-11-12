@@ -9,7 +9,7 @@ jimport('joomla.application.component.view');
 /**
  * Hello World Component Controller
  */
-/*class QikeyController extends JControllerLegacy
+class QikeyController extends JControllerLegacy
 {
 
 	function filterByDate(){
@@ -29,9 +29,9 @@ jimport('joomla.application.component.view');
 		
 	}
 
-}*/
-
-class QikeyController extends JControllerLegacy
-{
-
 }
+
+// class QikeyController extends JControllerLegacy
+// {
+
+// }

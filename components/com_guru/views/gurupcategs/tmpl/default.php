@@ -290,9 +290,9 @@ function generateCategsCells($config_categs, $style_categs, $course, $config){
                 if($img_align == "0"){// left
 					$return .= "<div>";
                     $return .= 		'<div>';
-           //          $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
-											// 	<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
-											// </div>';
+                    $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
+												<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
+											</div>';
 					if(trim($image) != ""){
                         $return .= 			'<div class="'.$style_categs->ctgs_image.'">'.$image.'</div>';
                     }
@@ -311,9 +311,9 @@ function generateCategsCells($config_categs, $style_categs, $course, $config){
                 elseif($img_align == "1"){// right
                     $return .= "<div>";
                     $return .= 		'<div>';
-           //          $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
-											// 	<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
-											// </div>';
+                    $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
+												<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
+											</div>';
 					if(trim($image) != ""){
                         $return .= 			'<div class="'.$style_categs->ctgs_image.'">'.$image.'</div>';
                     }	
@@ -335,9 +335,9 @@ function generateCategsCells($config_categs, $style_categs, $course, $config){
                 if($img_align == "0"){// left
                     $return .= "<div>";
                     $return .= 		'<div>';
-           //          $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
-											// 	<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
-											// </div>';
+                    $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
+												<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
+											</div>';
                     if(trim($image) != ""){
                         $return .= 			'<div class="'.$style_categs->ctgs_image.'">'.$image.'</div>';
                     }
@@ -354,9 +354,9 @@ function generateCategsCells($config_categs, $style_categs, $course, $config){
                 elseif($img_align == "1"){// right
                     $return .= "<div>";
                     $return .= 		'<div>';
-           //          $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
-											// 	<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
-											// </div>';
+                    $return .= 			'<div class="'.$style_categs->ctgs_categ_name.'">
+												<a href="'.JRoute::_('index.php?option=com_guru&view=guruPcategs&task=view&cid='.$course->id."-".$alias."&Itemid=".$item_id).'"><h4>'.$course->name.$edit_sum.'</h4></a>
+											</div>';
 					if(trim($image) != ""){
                         $return .= 			'<div class="'.$style_categs->ctgs_image.'" style="float:right;">'.$image.'</div>';
                     }

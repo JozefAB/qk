@@ -967,8 +967,8 @@ input[type=text]::-ms-clear {
 	visibility: hidden;
 }
 
-div.rt-grid-12 div.rt-block  {
-	margin-top: 150px;
+#rt-top-surround a:hover {
+	color: #fff700;
 }
 
 /*END*/

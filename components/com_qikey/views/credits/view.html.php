@@ -1,4 +1,9 @@
 <?php
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
  
@@ -9,7 +14,7 @@ jimport('joomla.application.component.modellist');
 /**
  * HTML View class for the Qikey Component
  */
-/*class QikeyViewCredits extends JViewLegacy
+class QikeyViewCredits extends JViewLegacy
 {
 	protected $profile;
 	protected $completedLessons;
@@ -43,23 +48,23 @@ jimport('joomla.application.component.modellist');
                 // Display the view
                 parent::display($tpl);
         }
-}*/
-
-class QikeyViewCredits extends JViewLegacy
-{
-    function display($tpl = null) 
-    { 
-
-        $items = $this->get('Data');
-        $this->assignRef( 'items', $items );
-
-        $model = JModelList::getInstance('Credits','QikeyModel');
-        $filterForm = $model->getFilterForm('items');
-        $this->assignRef('filterForm', $filterForm);
-
-        $pagination = $this->get('Pagination') ;
-        $this->assignRef( 'pagination', $pagination );
-
-        parent::display($tpl);
-    }
 }
+
+// class QikeyViewCredits extends JViewLegacy
+// {
+//     function display($tpl = null) 
+//     { 
+
+//         $items = $this->get('Data');
+//         $this->assignRef( 'items', $items );
+
+//         $model = JModelList::getInstance('Credits','QikeyModel');
+//         $filterForm = $model->getFilterForm('items');
+//         $this->assignRef('filterForm', $filterForm);
+
+//         $pagination = $this->get('Pagination') ;
+//         $this->assignRef( 'pagination', $pagination );
+
+//         parent::display($tpl);
+//     }
+// }

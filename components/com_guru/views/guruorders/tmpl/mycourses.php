@@ -98,7 +98,6 @@ JHTML::_('behavior.modal');
 	else{
 		$link = "index.php?option=com_guru&view=guruProfile&task=edit&Itemid=".$Itemid;
 	}
-	if(count($my_courses) > 0){
 	
 ?>
 <div id="myModal" class="modal hide g_modal" style="display:none;">
@@ -395,73 +394,3 @@ JHTML::_('behavior.modal');
     	</div>    
 	</div>
 </div>
-<?php
-    }
-    else{
-?>	
-	<div class="g_row">
-		<div class="g_cell span12">
-            <div>
-                <div>
-                    <form action="index.php" name="adminForm" method="post">
-                        <div id="guru_menubar" class="clearfix g_toolbar guru_menubar">
-                            <ul>
-                                <li id="my_account"><a href="<?php echo $link; ?>"><i class="icon-user"></i><?php echo JText::_("GURU_MY_ACCOUNT"); ?></a></li>
-                                <li id="my_courses"><a class="g_toolbar_active" href="index.php?option=com_guru&view=guruorders&layout=mycourses&Itemid=<?php echo $Itemid; ?>"><i class="icon-eye-open"></i><?php echo JText::_("GURU_MYCOURSES"); ?></a></li>
-                                <li id="my_orders"><a href="index.php?option=com_guru&view=guruorders&layout=myorders&Itemid=<?php echo $Itemid; ?>"><i class="icon-cart"></i><?php echo JText::_("GURU_MYORDERS_MYORDERS"); ?></a></li>
-                                <li id="my_quizzes"><a href="index.php?option=com_guru&view=guruorders&layout=myquizandfexam&Itemid=<?php echo $Itemid; ?>"><i class="icon-question-sign"></i><?php echo JText::_("GURU_QUIZZ_FINAL_EXAM"); ?></a></li>
-                                <li id="my_certificates"><a href="index.php?option=com_guru&view=guruorders&layout=mycertificates&Itemid=<?php echo $Itemid; ?>"><i class="icon-star"></i><?php echo JText::_("GURU_MYCERTIFICATES"); ?></a></li>
-                                 <li class="g_hide_mobile logout-btn" id="g_logout">
-                                    <a href="index.php?option=com_users&task=user.logout&<?php echo JSession::getFormToken(); ?>=1&Itemid=<?php echo $Itemid; ?>&return=<?php echo $return_url;?>">
-                                        <i class="fa fa-sign-out"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="guru_menubar_mobile" class="g_mobile guru_menubar">
-                            <select name="menuboostrap" class="g_select" id="menuboostrap" onchange="window.open(this.value, '_self');" >
-                             <option value="index.php?option=com_guru&view=guruorders&layout=myorders&Itemid=<?php echo $Itemid; ?>" <?php echo 'selected="selected"'; ?>><?php echo JText::_("GURU_MYORDERS_MYORDERS");?></option>
-                             <option value="index.php?option=com_guru&view=guruorders&layout=myquizandfexam&Itemid=<?php echo $Itemid; ?>" <?php echo 'selected="selected"'; ?>><?php echo JText::_("GURU_QUIZZ_FINAL_EXAM");?></option>
-                             <option value="index.php?option=com_guru&view=guruorders&layout=mycertificates&Itemid=<?php echo $Itemid; ?>" <?php echo 'selected="selected"'; ?>><?php echo JText::_("GURU_MYCERTIFICATES");?></option>
-                             <option value="index.php?option=com_guru&view=guruorders&layout=mycourses&Itemid=<?php echo $Itemid; ?>" <?php echo 'selected="selected"'; ?>><?php echo JText::_("GURU_MYCOURSES");?></option>
-                             <option value="index.php?option=com_guru&view=guruBuy&Itemid=<?php echo $Itemid; ?>"><?php echo JText::_("GURU_CART");?></option>
-                             <option value="index.php?option=com_users&task=user.logout&<?php echo JSession::getFormToken(); ?>=1&Itemid=<?php echo $Itemid; ?>"><?php echo JText::_("GURU_LOGIN_OUT");?></option>
-                              
-                          </select>
-                      </div>
-                        <div id="mycourses" class="clearfix com-cont-wrap">
-                            <div class="clearfix">
-                                <div class="mycourses_page page_title g_cell span7">
-                                    <h2><?php echo JText::_('GURU_MYCOURSES');?></h2>
-                                </div> 
-                                <div id="g_user_action" class="g_cell span5 g_hide_mobile">
-                                    <a class="btn btn-success" href="index.php?option=com_guru&view=guruBuy&Itemid=<?php echo $Itemid; ?>"><img src="components/com_guru/images/cart.gif" alt="<?php echo JText::_("GURU_MY_CART"); ?>"/><u><?php echo JText::_("GURU_CART"); ?></u></a>
-                              </div>
-                            </div>  
-                            <!-- Start Search -->
-                            <div class="clearfix">
-                                <div class="g_cell span8">
-                                 <div class="input-group g_search">
-                                      <input type="text" class="form-control inputbox" name="search_course" value="<?php if(isset($_POST['search_course'])) echo $_POST['search_course'];?>" >
-                                      <span class="input-group-btn g_hide_mobile">
-                                        <button class="btn btn-primary" type="submit"><?php echo JText::_("GURU_SEARCH"); ?></button>
-                                      </span>
-                                  </div><!-- /input-group -->
-                                </div>
-                            </div>
-                            <!-- End Search -->
-                <?php echo JText::_("GURU_NO_COURSES"); ?>, <a href="<?php echo JRoute::_("index.php?option=com_guru&view=gurupcategs"); ?>"><?php echo JText::_("GURU_SEE_A_LIST"); ?></a>
-                </div>
-                <input type="hidden" name="option" value="com_guru" />
-                <input type="hidden" name="controller" value="guruOrders" />
-                <input type="hidden" name="task" value="mycourses" />
-                <input type="hidden" name="order_id" value="" />
-                <input type="hidden" name="course_id" value="" />
-            </form>
-                </div>
-    	</div>    
-	</div>
-</div>
-<?php	
-    }
-?>
